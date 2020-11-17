@@ -1,0 +1,19 @@
+{
+  "name": "create-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "qiaolingniu <qiaolingniu@tencent.com>",
+  "license": "MIT",
+  "bin": {
+    "create-react": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.0.0",
+    "cross-spawn": "^7.0.3",
+    "envinfo": "^7.7.2",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}
