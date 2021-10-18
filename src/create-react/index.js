@@ -1,11 +1,4 @@
-/*
- * @Description: 
- * @Author: qiaolingniu
- * @Date: 2020-08-17 17:30:59
- * @LastEditors: qiaolingniu
- * @LastEditTime: 2020-08-20 11:26:29
- * @FilePath: /create-cli/src/create-react/index.js
- */
+
 'use strict';
 require('./createReactApp');
 
