@@ -18,4 +18,4 @@ const init = () => {
     process.exit(1);
   }
 }
-module.exports = init
+init()
