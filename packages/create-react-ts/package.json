@@ -1,5 +1,5 @@
 {
-  "name": "create-react",
+  "name": "qlniu/create-react-ts",
   "version": "0.0.3",
   "main": "index.js",
   "files": [
@@ -18,5 +18,5 @@
     "inquirer": "^7.3.3",
     "validate-npm-package-name": "^3.0.0"
   },
-  "gitHead": "e7816e3ffa90bf6c59ab7dfb006c9d49b2907161"
+  "gitHead": "ddd2422d005b29f9bc63241b3568245cb325b359"
 }
