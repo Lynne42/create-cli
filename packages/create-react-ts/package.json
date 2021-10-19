@@ -1,5 +1,5 @@
 {
-  "name": "@qln/crt",
+  "name": "@qln/create-react-ts",
   "version": "0.0.9",
   "main": "index.js",
   "files": [
@@ -21,5 +21,5 @@
     "inquirer": "^7.3.3",
     "validate-npm-package-name": "^3.0.0"
   },
-  "gitHead": "1a149e894ce61440e06e3bf6bee393a49c27121c"
+  "gitHead": "6e973dfee3e04c8c0236fd81a52b10b4b5456fe6"
 }
