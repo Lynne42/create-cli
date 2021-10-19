@@ -137,7 +137,7 @@ async function install(root, useMultipage) {
     `echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js`
   );
 
-  await fs.copy(path.join(rootpath, "/src/react-typescript-template"), root);
+  await fs.copy(path.join(rootpath, "/template"), root);
 
   const currentPackageJson = await fs.readJson(root + "/package.json", {
     throws: false,
