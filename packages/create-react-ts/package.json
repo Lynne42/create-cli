@@ -5,6 +5,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "qiaolingniu <qiaolingniu@163.com>",
   "license": "MIT",
   "bin": {
@@ -18,5 +21,5 @@
     "inquirer": "^7.3.3",
     "validate-npm-package-name": "^3.0.0"
   },
-  "gitHead": "45361e6400bc63e10f0735f1da70ba2c8aaa1ceb"
+  "gitHead": "1a149e894ce61440e06e3bf6bee393a49c27121c"
 }
