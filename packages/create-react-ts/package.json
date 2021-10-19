@@ -11,7 +11,7 @@
   "author": "qiaolingniu <qiaolingniu@163.com>",
   "license": "MIT",
   "bin": {
-    "create-react-ts": "./index.js"
+    "cra-ts": "./index.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
