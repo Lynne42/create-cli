@@ -1,5 +1,5 @@
 {
-  "name": "@qln/create-react-ts",
+  "name": "@qln/cra-ts",
   "version": "0.0.10",
   "main": "index.js",
   "files": [

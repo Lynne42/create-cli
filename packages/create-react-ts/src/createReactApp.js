@@ -73,7 +73,6 @@ if (!projectName) {
 function creatReact(name, useMultipage) {
   const root = path.resolve(name);
   const appName = path.basename(root);
-  console.log(2, root, appName);
   // 检查项目名是否合法
   checkAppName(name);
 
@@ -100,7 +99,6 @@ function creatReact(name, useMultipage) {
 async function install(root, useMultipage) {
   const rootpath = path.dirname(root);
   const name = path.basename(root);
-  console.log(3, rootpath, name)
   let args = ["create-react-app", name, "--template", "typescript"];
   const resultInit = spawnSync("npx", args);
 
@@ -190,5 +188,4 @@ function checkAppName(appName) {
   }
 }
 
-console.log(1, projectName);
 creatReact(projectName, program.useMultipage);
