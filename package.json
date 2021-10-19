@@ -1,28 +1,48 @@
 {
-  "name": "create-cli",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create-react": "node tasks/cr.js",
-    "build": "lerna exec -- babel src -d dist --config-file ../../babel.config.js",
-    "publish": "npm run build && lerna publish"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "commander": "^6.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/node": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "babel-preset-minify": "^0.5.1",
-    "lerna": "^4.0.0"
-  }
+    "name": "create-cli",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "create-react": "node tasks/cr.js",
+        "build": "lerna exec -- babel src -d dist --config-file ../../babel.config.js",
+        "publish": "npm run build && lerna publish",
+        "prepare": "husky install",
+        "commit": "npx git-cz"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "commander": "^6.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.15.7",
+        "@babel/core": "^7.15.8",
+        "@babel/node": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "@commitlint/cli": "^13.2.1",
+        "@commitlint/config-conventional": "^13.2.0",
+        "babel-preset-minify": "^0.5.1",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.0.1",
+        "husky": "^7.0.2",
+        "lerna": "^4.0.0",
+        "lint-staged": "^11.2.3",
+        "prettier": "^2.4.1"
+    },
+    "lint-staged": {
+        "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
+            "prettier --write"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    }
 }
