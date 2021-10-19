@@ -2,10 +2,13 @@
   "name": "create-react",
   "version": "1.0.0",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "author": "qiaolingniu <qiaolingniu@163.com>",
   "license": "MIT",
   "bin": {
-    "create-react": "./index.js"
+    "create-react-ts": "./index.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",

@@ -1,3 +1,4 @@
+'use strict';
 
 const chalk = require("chalk");
 const { spawn, spawnSync, execSync } = require('child_process');
@@ -9,7 +10,7 @@ const inquirer = require("inquirer");
 const fs = require("fs-extra");
 const validateProjectName = require("validate-npm-package-name");
 
-const packageJson = require("./package.json");
+const packageJson = require("../package.json");
 
 let projectName;
 
@@ -35,7 +36,8 @@ if (program.info) {
     `\n  current version of ${packageJson.name}: ${packageJson.version}`
   );
   console.log(`  running from ${__dirname}`);
-  return envinfo.run(
+  envinfo
+  .run(
       {
         System: ["OS", "CPU"],
         Binaries: ["Node", "npm", "Yarn"],
