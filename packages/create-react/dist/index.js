@@ -1,1 +1,0 @@
-'use strict';require("./createReactApp");const init=()=>{var a=process.versions.node,b=a.split("."),c=b[0];10>c&&(console.error("You are running Node "+a+".\nCreate React App requires Node 10 or higher. \nPlease update your version of Node."),process.exit(1))};module.exports=init;
