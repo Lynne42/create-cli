@@ -2,7 +2,7 @@
 
 'use strict';
 
-if (process.env.LOCAL_DEBUG) {
+if (true) {
   require('./src/index')
 } else {
   require('./dist/index')

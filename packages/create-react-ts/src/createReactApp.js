@@ -72,6 +72,7 @@ if (!projectName) {
 // creatReact
 function creatReact(name, useMultipage) {
   const root = path.resolve(name);
+  console.log(999, root, process.cwd())
   const appName = path.basename(root);
   // 检查项目名是否合法
   checkAppName(name);
@@ -88,6 +89,7 @@ function creatReact(name, useMultipage) {
   }
   // 创建目标项目
 
+
   try {
     install(root, useMultipage);
   } catch (error) {
@@ -99,8 +101,11 @@ function creatReact(name, useMultipage) {
 async function install(root, useMultipage) {
   const rootpath = path.dirname(root);
   const name = path.basename(root);
+
   let args = ["create-react-app", name, "--template", "typescript"];
-  const resultInit = spawnSync("npx", args);
+  const resultInit = spawnSync("npx", args, {
+    stdio: 'inherit',
+  });
 
   process.chdir(root);
 
@@ -109,7 +114,9 @@ async function install(root, useMultipage) {
   const installOther = ["antd", "axios", "typestyle"].sort();
 
   const argsd = ["add"].concat(installOther);
-  await spawn("yarn", argsd);
+  await spawn("yarn", argsd, {
+    stdio: 'inherit',
+  });
 
   const installDevOther = [
     "babel-plugin-import",
@@ -131,13 +138,15 @@ async function install(root, useMultipage) {
   ];
   const argsdevd = ["add", "--dev"].concat(installDevOther);
 
-  await spawn("yarn", argsdevd);
+  await spawn("yarn", argsdevd, {
+    stdio: 'inherit',
+  });
 
   execSync(
     `echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js`
   );
 
-  await fs.copy(path.join(rootpath, "/template"), root);
+  await fs.copy(path.join(__dirname, "../template"), root);
 
   const currentPackageJson = await fs.readJson(root + "/package.json", {
     throws: false,

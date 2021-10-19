@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-react": "node tasks/cr.js",
-    "build": "lerna exec -- babel src -d dist --config-file ../../babel.config.js"
+    "build": "lerna exec -- babel src -d dist --config-file ../../babel.config.js",
+    "publish": "npm run build && lerna publish"
   },
   "author": "",
   "license": "ISC",
