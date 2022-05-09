@@ -24,7 +24,7 @@ const dropConsole = () => {
 module.exports = {
     webpack: {
         alias: {
-            '@static': path.resolve(__dirname, 'src/static/'),
+            '@': path.resolve(__dirname, 'src'),
         },
         configure: (webpackConfig, {env, paths}) => {
             webpackConfig.module.rules.push({
@@ -64,22 +64,13 @@ module.exports = {
         proxy: {
             ...proxy,
             '/api': {
-                target: 'http://106.38.203.236:8888/',
+                target: 'http://yapi.realai-inc.cn',
                 changeOrigin: true,
                 secure: false,
-                // pathRewrite: {
-                //     '/api': '/mock/71/api',
-                // },
+                pathRewrite: {
+                    '/api': '/mock/281/',
+                },
             },
         },
     }),
-    babel: {
-        presets: [],
-        plugins: [
-            ['import', {libraryName: 'antd', libraryDirectory: 'lib', style: true}, 'ant-design'],
-        ],
-        loaderOptions: (babelLoaderOptions, {env, paths}) => {
-            return babelLoaderOptions;
-        },
-    },
 };

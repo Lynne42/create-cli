@@ -11,8 +11,10 @@ const args = process.argv.slice(2);
 
 const craScriptPath = path.join(packagesDir, "create-react", "index.js");
 
-console.log(11, craScriptPath);
-cp.execSync(`LOCAL_DEBUG=true node ${craScriptPath} ${args.join(" ")}`, {
-    cwd: rootDir,
-    stdio: "inherit",
-});
+cp.execSync(
+    `LOCAL_DEBUG=true node --experimental-json-modules ${craScriptPath} ${args.join(" ")}`,
+    {
+        cwd: rootDir,
+        stdio: "inherit",
+    }
+);
