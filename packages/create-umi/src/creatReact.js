@@ -19,7 +19,7 @@ async function install(root, useMultipage) {
     const rootpath = path.dirname(root);
     const name = path.basename(root);
 
-    let args = ["create-react-app@latest", name, "--template", "typescript"];
+    let args = ["create-umi", name];
     spawnSync("npx", args, {
         stdio: "inherit",
     });
@@ -27,7 +27,7 @@ async function install(root, useMultipage) {
     process.chdir(root);
     process.cwd();
 
-    const installOther = ["antd", "axios", "classnames"].sort();
+    const installOther = ["antd", "classnames"].sort();
     const argsd = ["add"].concat(installOther);
     spawnSync("yarn", argsd, {
         stdio: "inherit",
@@ -36,20 +36,7 @@ async function install(root, useMultipage) {
     const installDevOther = [
         "cross-env",
         "file-loader",
-        "craco-less",
-        "@craco/craco",
         "tailwindcss",
-        "postcss",
-        "autoprefixer",
-        "eslint-config-prettier",
-        "eslint-plugin-prettier",
-        "stylelint",
-        "stylelint-order",
-        "stylelint-config-standard",
-        "stylelint-config-prettier",
-        "@typescript-eslint/eslint-plugin",
-        "@typescript-eslint/parser",
-        "prettier",
         "husky",
         "lint-staged",
         "commitizen",
@@ -79,15 +66,11 @@ async function install(root, useMultipage) {
     });
 
     currentPackageJson["scripts"] = {
-        start: "cross-env craco start",
-        build: "cross-env craco build",
-        test: "craco test",
-        "build:analyze": "cross-env analyze=true craco build",
+        ...currentPackageJson["scripts"],
         commit: "npx git-cz",
         release: "standard-version",
         prepare: "husky install",
         eslint: "./node_modules/.bin/eslint --fix --ext .tsx,.ts src/",
-        stylelint: "./node_modules/.bin/stylelint --fix .css,.less,.sass",
     };
 
     currentPackageJson["lint-staged"] = {
@@ -148,6 +131,7 @@ export default function creatReact(name, useMultipage) {
             if (err) {
                 return console.error(err);
             }
+
             install(root, useMultipage);
         });
     } catch (error) {

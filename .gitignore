@@ -1,12 +1,13 @@
-
 .vscode
 /demo
 **/demo
 node_modules
 **/node_modules
-node_modules/*
 
-/dist
+dist
 **/dist
 
 *.log
+
+
+my-app
