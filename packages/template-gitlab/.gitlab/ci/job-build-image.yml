@@ -1,0 +1,47 @@
+build_image:
+    image: ${DOCKER_REG}/public/docker:19.03.8
+    services:
+        - name: ${DOCKER_REG}/public/docker:19.03.8-dind
+    stage: buildImage(打包镜像)
+    only:
+        refs:
+            - dev-cicd-deploy
+            - tags
+    tags:
+        - online
+
+    cache: {}
+    script:
+        - docker_build
+
+build_image_test:
+    image: ${DOCKER_REG}/public/docker:19.03.8
+    services:
+        - name: ${DOCKER_REG}/public/docker:19.03.8-dind
+    stage: buildImage(打包镜像)
+    only:
+        refs:
+            - test-cicd-deploy
+            - tags
+    tags:
+        - online
+
+    cache: {}
+    script:
+        - docker_build
+
+build_image_master:
+    image: ${DOCKER_REG}/public/docker:19.03.8
+    services:
+        - name: ${DOCKER_REG}/public/docker:19.03.8-dind
+    stage: buildImage(打包镜像)
+    only:
+        refs:
+            - master
+            - tags
+    tags:
+        - online
+
+    cache: {}
+    script:
+        - docker_build 'master'

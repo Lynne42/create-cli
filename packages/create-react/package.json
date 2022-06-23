@@ -1,0 +1,27 @@
+{
+    "name": "@qln/cra-ts",
+    "version": "0.0.16",
+    "main": "index.js",
+    "files": [
+        "dist",
+        "template"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "type": "module",
+    "author": "qiaolingniu <qiaolingniu@163.com>",
+    "license": "MIT",
+    "bin": {
+        "cra-ts": "./index.js"
+    },
+    "dependencies": {
+        "chalk": "^5.0.1",
+        "commander": "^9.2.0",
+        "envinfo": "^7.8.1",
+        "fs-extra": "^10.1.0",
+        "inquirer": "^8.2.2",
+        "validate-npm-package-name": "^4.0.0"
+    },
+    "gitHead": "6e973dfee3e04c8c0236fd81a52b10b4b5456fe6"
+}

@@ -1,0 +1,13 @@
+{
+  "printWidth": 100,
+  "tabWidth": 4,
+  "semi": true,
+  "bracketSpacing": false,
+  "singleQuote": true,
+  "overrides": [
+      {
+          "files": "*.{cmp,page}",
+          "options": {"parser": "html"}
+      }
+  ]
+}

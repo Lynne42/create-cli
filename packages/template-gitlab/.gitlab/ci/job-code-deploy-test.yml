@@ -1,0 +1,42 @@
+code_deploy_test:
+    stage: "deploy(部署)"
+    tags:
+        - online
+    only:
+        refs:
+            - test-cicd-deploy
+            - tags
+    needs:
+        - job: build_image_test
+    script:
+        - image_deploy_test
+    cache: {}
+
+code_deploy_dev:
+    stage: "deploy(部署)"
+    tags:
+        - online
+    only:
+        refs:
+            - dev-cicd-deploy
+            - tags
+    needs:
+        - job: build_image
+    script:
+        - image_deploy_dev
+    cache: {}
+
+code_deploy_master:
+    stage: "deploy(部署)"
+    tags:
+        - online
+    only:
+        refs:
+            - master
+            - tags
+    needs:
+        - job: build_image_master
+    script:
+        - image_deploy_master
+    cache: {}
+    when: manual
