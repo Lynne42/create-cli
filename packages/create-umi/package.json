@@ -9,7 +9,6 @@
     "publishConfig": {
         "access": "public"
     },
-    "type": "module",
     "author": "qiaolingniu <qiaolingniu@163.com>",
     "license": "MIT",
     "bin": {
