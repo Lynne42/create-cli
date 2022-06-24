@@ -1,6 +1,6 @@
 {
     "name": "@qln/cra-ts",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": "index.js",
     "files": [
         "dist",
@@ -23,5 +23,5 @@
         "inquirer": "^8.2.2",
         "validate-npm-package-name": "^4.0.0"
     },
-    "gitHead": "afbfc9a4d8855f5ef580f73ca2700b84038b7687"
+    "gitHead": "8c5487f8650a52caafd2e510620baac995ed6521"
 }
