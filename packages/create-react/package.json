@@ -1,10 +1,11 @@
 {
     "name": "@qln/cra-ts",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "main": "index.js",
     "files": [
         "dist",
-        "template"
+        "template",
+        "template-code"
     ],
     "publishConfig": {
         "access": "public"
