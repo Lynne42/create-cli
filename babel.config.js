@@ -4,10 +4,10 @@ module.exports = function (api) {
 
     const presets = [
         [
-            "@babel/preset-env",
+            "@babel/env",
             {
                 targets: {
-                    esmodules: true,
+                    node: "^16.0.0",
                 },
             },
         ],
