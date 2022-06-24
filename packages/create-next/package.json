@@ -1,6 +1,6 @@
 {
     "name": "@qln/next-ts",
-    "version": "1.0.4",
+    "version": "1.0.2",
     "main": "index.js",
     "files": [
         "dist",
@@ -22,5 +22,5 @@
         "inquirer": "^8.2.2",
         "validate-npm-package-name": "^4.0.0"
     },
-    "gitHead": "8c5487f8650a52caafd2e510620baac995ed6521"
+    "gitHead": "73237b14bd521beb573c0de1daeda9d3c8c6b14b"
 }
