@@ -23,5 +23,5 @@
         "inquirer": "^8.2.2",
         "validate-npm-package-name": "^4.0.0"
     },
-    "gitHead": "6e973dfee3e04c8c0236fd81a52b10b4b5456fe6"
+    "gitHead": "afbfc9a4d8855f5ef580f73ca2700b84038b7687"
 }
