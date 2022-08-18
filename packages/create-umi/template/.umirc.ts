@@ -6,26 +6,20 @@ import defaultSettings from "./config/defaultSettings";
 
 const plugins = [];
 if (process.env.NODE_ENV === "production") {
-    plugins.push("transform-remove-console");
+  plugins.push("transform-remove-console");
 }
 
 export default defineConfig({
-    nodeModulesTransform: {
-        type: "none",
-    },
-    extraBabelPlugins: plugins,
-    routes,
-    proxy,
-    fastRefresh: {},
-    hash: true,
-    ...defaultSettings,
-    tailwindcss: {
-        tailwindCssFilePath: "/styles/tailwind.css",
-        tailwindConfigFilePath: "tailwind.config.js", // Default value: tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),
-    },
-    mfsu: {},
-    webpack5: {},
-
-    ignoreMomentLocale: true,
-    workerLoader: {},
+  extraBabelPlugins: plugins,
+  routes,
+  proxy,
+  fastRefresh: true,
+  hash: true,
+  ...defaultSettings,
+  extraPostCSSPlugins: [
+    require("tailwindcss")({ config: "./tailwind.config.js" }),
+    require("autoprefixer"),
+  ],
+  mfsu: {},
+  ignoreMomentLocale: true,
 });

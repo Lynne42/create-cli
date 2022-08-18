@@ -2,17 +2,16 @@
 
 "use strict";
 
-import chalk from "chalk";
-import { spawn, spawnSync, execSync } from "child_process";
-import path from "path";
-import process from "process";
-import { fileURLToPath } from "url";
+const chalk = require("chalk");
+const { spawn, spawnSync, execSync } = require("child_process");
+const path = require("path");
+const process = require("process");
 
-import fs from "fs-extra";
-import validateProjectName from "validate-npm-package-name";
+const fs = require("fs-extra");
+const validateProjectName = require("validate-npm-package-name");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const { fileURLToPath } = require("url");
+// const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // install
 async function install(root, useMultipage) {
@@ -27,7 +26,7 @@ async function install(root, useMultipage) {
     process.chdir(root);
     process.cwd();
 
-    const installOther = ["antd", "axios", "classnames"].sort();
+    const installOther = ["antd", "axios", "classnames","lodash"].sort();
     const argsd = ["add"].concat(installOther);
     spawnSync("yarn", argsd, {
         stdio: "inherit",
@@ -57,6 +56,7 @@ async function install(root, useMultipage) {
         "@commitlint/config-conventional",
         "@commitlint/cli",
         "standard-version",
+        "@types/lodash",
     ];
     const argsdevd = ["add", "--dev"].concat(installDevOther);
     spawnSync("yarn", argsdevd, {
@@ -70,7 +70,6 @@ async function install(root, useMultipage) {
     execSync(
         `echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js`
     );
-
     await fs.copy(path.join(__dirname, "../template"), root);
     await fs.copy(path.join(__dirname, "../template-code"), root + "/src/");
 
@@ -125,7 +124,7 @@ function checkAppName(appName) {
 }
 
 // creatReact
-export default function creatReact(name, useMultipage) {
+function creatReact(name, useMultipage) {
     const root = path.resolve(name);
 
     const appName = path.basename(root);
@@ -153,4 +152,9 @@ export default function creatReact(name, useMultipage) {
     } catch (error) {
         console.log(error);
     }
+}
+
+
+module.exports = {
+    creatReact,
 }

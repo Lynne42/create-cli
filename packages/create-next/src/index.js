@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 "use strict";
-import("./initProgram.js");
+const { initProgram } = require("./initProgram.js");
 
 const init = () => {
     var currentNodeVersion = process.versions.node;
@@ -18,5 +18,7 @@ const init = () => {
         );
         process.exit(1);
     }
+    initProgram();
 };
-init();
+
+init()

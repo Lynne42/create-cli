@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 if (process.env.LOCAL_DEBUG) {
-    import("./src/index.js");
+    require("./src/index.js");
 } else {
-    import("./dist/index.js");
+    require("./dist/index.js");
 }
+

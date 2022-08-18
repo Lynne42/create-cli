@@ -1,7 +1,7 @@
 // 导出一些默认样式配置
 export default {
     title: "RealCenter",
-    favicon: "/favicon.png",
+    favicons: ["/favicon.png"],
     theme: {
         "@primary-color": "#397EEC",
         "@border-radius-base": "4px",

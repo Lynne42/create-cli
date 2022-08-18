@@ -7,7 +7,7 @@ module.exports = function (api) {
             "@babel/env",
             {
                 targets: {
-                    node: "^16.0.0",
+                    "node": true
                 },
             },
         ],
@@ -17,7 +17,7 @@ module.exports = function (api) {
         presets.push(["minify"]);
     }
 
-    const plugins = ["@babel/plugin-syntax-import-assertions"];
+    const plugins = ["@babel/plugin-syntax-import-assertions", "babel-plugin-transform-import-meta"];
 
     return {
         presets,
