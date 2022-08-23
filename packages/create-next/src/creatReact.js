@@ -43,6 +43,7 @@ async function install(root, useMultipage) {
         "eslint-plugin-testing-library",
         "prettier",
         "husky",
+        "lint-staged",
         "commitizen",
         "cz-conventional-changelog",
         "@commitlint/config-conventional",
@@ -84,6 +85,10 @@ async function install(root, useMultipage) {
         ...currentPackageJson["scripts"],
     };
 
+    currentPackageJson["lint-staged"] = {
+        "*.{ts,tsx,js,jsx}": ["npm run eslint", "git add ."],
+        "*.{ts,tsx,json,css,less,md}": ["prettier --write --ignore-unknown", "git add ."],
+    };
     currentPackageJson["config"] = {
         commitizen: {
             path: "cz-conventional-changelog",
@@ -145,7 +150,6 @@ function creatReact(name, useMultipage) {
     }
 }
 
-
 module.exports = {
     creatReact,
-}
+};
