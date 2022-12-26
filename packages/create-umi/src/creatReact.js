@@ -19,17 +19,19 @@ async function install(root, useMultipage) {
     const rootpath = path.dirname(root);
     const name = path.basename(root);
 
-    let args = ["create-umi", name];
+    let args = ["create-umi@latest", name];
     spawnSync("npx", args, {
         stdio: "inherit",
     });
 
+    // 选择基础模板
+
     process.chdir(root);
     process.cwd();
 
-    const installOther = ["antd", "classnames", "lodash"].sort();
-    const argsd = ["add"].concat(installOther);
-    spawnSync("yarn", argsd, {
+    const installOther = ["classnames"].sort();
+    const argsd = ["install"].concat(installOther);
+    spawnSync("npm", argsd, {
         stdio: "inherit",
     });
 
@@ -37,21 +39,19 @@ async function install(root, useMultipage) {
         "cross-env",
         "file-loader",
         "tailwindcss",
-        "husky",
         "lint-staged",
         "commitizen",
         "cz-conventional-changelog",
         "@commitlint/config-conventional",
         "@commitlint/cli",
         "standard-version",
-        "@types/lodash",
     ];
-    const argsdevd = ["add", "--dev"].concat(installDevOther);
-    spawnSync("yarn", argsdevd, {
+    const argsdevd = ["install", "--save-dev"].concat(installDevOther);
+    spawnSync("npm", argsdevd, {
         stdio: "inherit",
     });
 
-    spawnSync("npx", ["tailwindcss", "init", "-p"], {
+    spawnSync("npx", ["max", "g", "tailwindcss"], {
         stdio: "inherit",
     });
 
@@ -70,13 +70,12 @@ async function install(root, useMultipage) {
         ...currentPackageJson["scripts"],
         commit: "npx git-cz",
         release: "standard-version",
-        prepare: "husky install",
-        eslint: "./node_modules/.bin/eslint --fix --ext .tsx,.ts src/",
+        eslint: "eslint --fix --ext .tsx,.ts src/",
     };
 
     currentPackageJson["lint-staged"] = {
         "*.{ts,tsx,js,jsx}": ["npm run eslint", "git add ."],
-        "*.{ts,tsx,json,css,less,md}": ["prettier --write --ignore-unknown", "git add ."],
+        "*.{ts,tsx,json,css,less,md}": ["npm run format", "git add ."],
     };
     currentPackageJson["config"] = {
         commitizen: {

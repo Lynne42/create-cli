@@ -3,6 +3,7 @@
 "use strict";
 const { initProgram } = require("./initProgram.js");
 
+
 const init = () => {
     var currentNodeVersion = process.versions.node;
     var semver = currentNodeVersion.split(".");

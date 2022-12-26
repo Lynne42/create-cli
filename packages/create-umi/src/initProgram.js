@@ -2,12 +2,11 @@
 
 "use strict";
 
-import process from "process";
+const process = require("process");
 const { program } = require('commander');
-import { creatReact } from "./creatReact.js";
+const { creatReact } = require("./creatReact.js");
 
-import packageJson from "../package.json" assert { type: "json" };
-
+const packageJson = require("../package.json");
 
 // 命令辅助信息
 
