@@ -1,6 +1,6 @@
 {
     "name": "@qln/cra-ts",
-    "version": "1.0.17",
+    "version": "2.0.0",
     "main": "index.js",
     "files": [
         "dist",
@@ -12,9 +12,7 @@
     },
     "author": "qiaolingniu <qiaolingniu@163.com>",
     "license": "MIT",
-    "bin": {
-        "cra-ts": "./index.js"
-    },
+    "bin": "./index.js",
     "dependencies": {
         "chalk": "^4.1.2",
         "commander": "^9.3.0",

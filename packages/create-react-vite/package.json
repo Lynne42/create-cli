@@ -1,5 +1,5 @@
 {
-    "name": "@qln/next-ts",
+    "name": "@qln/vite-react-ts",
     "version": "2.0.0",
     "main": "index.js",
     "files": [
@@ -12,7 +12,9 @@
     },
     "author": "qiaolingniu <qiaolingniu@163.com>",
     "license": "MIT",
-    "bin": "./index.js",
+    "bin": {
+        "cra-ts": "./index.js"
+    },
     "dependencies": {
         "chalk": "^4.1.2",
         "commander": "^9.3.0",
